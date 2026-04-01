@@ -93,3 +93,11 @@ const data = [
     image: "https://placehold.co/400x300/4a90d9/white?text=Sherlock"
   }
 ];
+
+// Récupère la liste #list
+const ulList = document.getElementById("list");
+
+//Parcours la liste et crée un li par série
+data.forEach(serie => {
+    ulList.innerHTML += `<li>${serie.category}: ${serie.category}</li>`;
+});

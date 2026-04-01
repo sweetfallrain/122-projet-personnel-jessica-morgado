@@ -99,5 +99,9 @@ const ulList = document.getElementById("list");
 
 //Parcours la liste et crée un li par série
 data.forEach(serie => {
-    ulList.innerHTML += `<li>${serie.category}: ${serie.category}</li>`;
+    ulList.innerHTML += `
+        <li>
+            <div>${serie.name}</div>
+            <div><img src="${serie.image}" alt="${serie.name}"></div>
+        </li>`;
 });

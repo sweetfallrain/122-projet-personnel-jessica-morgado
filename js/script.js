@@ -94,14 +94,31 @@ const data = [
   }
 ];
 
-// Récupère la liste #list
-const ulList = document.getElementById("list");
+/**
+ * Affiche les séries dans la page
+ * @param {Array} tabSeries - Tableau d'objets à afficher
+ */
+function afficherSeries(tabSeries) {
+    // Récupère la liste #list
+    const ulList = document.getElementById("list");
+
+//Vide, réinitialise la liste
+    ulList.innerHTML = "";
 
 //Parcours la liste et crée un li par série
-data.forEach(serie => {
-    ulList.innerHTML += `
-        <li>
-            <div>${serie.name}</div>
-            <div><img src="${serie.image}" alt="${serie.name}"></div>
-        </li>`;
-});
+    tabSeries.forEach(serie => {
+        ulList.innerHTML += `
+        <article class="card">
+            <img src="${serie.image}" alt="${serie.name}">
+            <div class="card-body">
+                <h2>${serie.name}</h2>
+                <p>${serie.category} - ${serie.year}</p>
+                <span class="rating">${serie.rating}</span>
+            </div>
+        </article>
+    `;
+    });
+}
+
+// Appel au chargement de la page
+afficherSeries(data);

@@ -101,14 +101,16 @@ const data = [
 function afficherSeries(tabSeries) {
     // Récupère la liste #list
     const ulList = document.getElementById("list");
+    // Variable temporaire pour construire la liste
+    let html = "";
 
 //Vide, réinitialise la liste
     ulList.innerHTML = "";
 
 //Parcours la liste et crée un li par série
     tabSeries.forEach(serie => {
-        ulList.innerHTML += `
-        <article class="card">
+       html += `
+        <article class="card" data-id="${serie.id}">
             <img src="${serie.image}" alt="${serie.name}">
             <div class="card-body">
                 <h2>${serie.name}</h2>
@@ -118,7 +120,13 @@ function afficherSeries(tabSeries) {
         </article>
     `;
     });
+
+// Ajoute la liste complète dans le DOM
+    ulList.innerHTML = html;
 }
 
 // Appel au chargement de la page
-afficherSeries(data);
+    afficherSeries(data);
+
+
+

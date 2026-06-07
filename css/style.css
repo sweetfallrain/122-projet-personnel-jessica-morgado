@@ -1,5 +1,5 @@
 /* ============================================
-Mon projet 122 — Feuille de styles
+Mon projet 122 — Graphisme
 ============================================ */
 
 /* PALETTE & VARIABLES */
@@ -70,7 +70,6 @@ body {
 }
 
 /* HEADER */
-
 .hero {
     margin-bottom: 2.5rem;
 }
@@ -92,7 +91,6 @@ body {
 }
 
 /* FORMULAIRE */
-
 .panel {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -153,7 +151,6 @@ select:focus {
 }
 
 /* BOUTONS */
-
 .btn {
     height: 46px;
     padding: 0 1.3rem;
@@ -178,7 +175,6 @@ select:focus {
 }
 
 /* RECHERCHE */
-
 .toolbar {
     display: grid;
     grid-template-columns: 1fr 160px auto;
@@ -191,7 +187,6 @@ select:focus {
 }
 
 /* CARTES */
-
 #list {
     list-style: none;
     display: grid;
@@ -280,7 +275,6 @@ select:focus {
 }
 
 /* FOOTER */
-
 footer {
     margin-top: 2.5rem;
     text-align: center;
@@ -289,7 +283,6 @@ footer {
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 850px) {
     .form-grid {
         grid-template-columns: 1fr 1fr;

@@ -4,7 +4,13 @@ Projet JavaScript — Cours 122 (ESIG)
 
 ## Description
 
-[Décris ton projet ici : quel type de données tu gères et pourquoi tu as choisi cette ressource]
+Binge est un site web permettant de gérer une bibliothèque personnelle de séries télévisées.
+L'utilisateur peut consulter une liste de séries, les rechercher rapidement, les trier selon différents critères, 
+ajouter de nouvelles séries et supprimer celles qu'il ne souhaite plus afficher.
+
+J'ai choisi cette ressource car je suis passionnée de cinéma,tout particulièrement de séries et je trouvais intéressant 
+de créer un site inspiré de plateformes comme TV Time ou Netflix. Ce projet m'a permis de travailler la manipulation du DOM, 
+le codage en JavaScript ainsi que l'affichage dynamique de données.
 
 ## Lien GitHub Pages
 

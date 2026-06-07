@@ -76,7 +76,6 @@ header h1 {
 }
 
 /* 4. FORMULAIRE D'AJOUT (présenté comme une carte) */
-
 #form-add {
     background-color: var(--surface);
     border: 1px solid var(--border);

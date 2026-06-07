@@ -220,11 +220,9 @@ function afficherSeries(tabSeries) {
                 </div>
             </div>
         </li>
-
     `;
     });
 
     ulList.innerHTML = html;
 }
-
 refresh();

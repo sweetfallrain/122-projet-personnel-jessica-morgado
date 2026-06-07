@@ -13,12 +13,26 @@
 </head>
 
 <body>
-<div class="page">
 
-<header class="hero">
-    <h1>Binge</h1>
-    <p>Toutes vos séries au même endroit !</p>
-</header>
+<div class="page">
+    <header class="hero">
+
+        <div class="hero-top">
+
+            <div>
+                <h1>Binge</h1>
+                <p>Toutes vos séries au même endroit !</p>
+            </div>
+
+            <nav class="nav">
+                <a href="#form-add">Ajouter</a>
+                <a href="#search">Rechercher</a>
+                <a href="#list">Séries</a>
+            </nav>
+
+        </div>
+
+    </header>
 
 <main>
       <form id="form-add" class="panel">
@@ -67,10 +81,17 @@
           </div>
       </form>
 
-      <div class="toolbar">
-          <input type="text" id="search" placeholder="Rechercher une série..." aria-label="Rechercher une série">
-          <button id="btn-sort" class="btn btn-primary">Trier par note ↓ (DESC)</button>
-      </div>
+    <div class="toolbar">
+        <input type="text" id="search" placeholder="Rechercher une série..." aria-label="Rechercher une série">
+
+        <select id="sort-criteria" aria-label="Critère de tri">
+            <option value="rating">Note</option>
+            <option value="platform">Plateforme</option>
+            <option value="name">Nom</option>
+        </select>
+
+        <button id="btn-sort" class="btn">Trier </button>
+    </div>
 
     <ul id="list"></ul>
 </main>

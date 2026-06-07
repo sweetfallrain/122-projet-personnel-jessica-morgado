@@ -122,30 +122,56 @@ const inputCategory = document.getElementById("input-category");
 const inputPlatform = document.getElementById("input-platform");
 const inputYear = document.getElementById("input-year");
 const inputRating = document.getElementById("input-rating");
+const sortCriteria = document.getElementById("sort-criteria");
 
 let sortAsc = false;
 
 function refresh() {
     const query = searchInput.value.toLowerCase();
+    const criteria = sortCriteria.value;
 
     let result = data.filter(serie =>
         serie.name.toLowerCase().includes(query)
     );
 
-    result = [...result].sort((a, b) =>
-        sortAsc ? a.rating - b.rating : b.rating - a.rating
-    );
+    result = [...result].sort((a, b) => {
+
+        if (criteria === "name") {
+
+            if (sortAsc) {
+                return a.name.localeCompare(b.name);
+            }
+
+            return b.name.localeCompare(a.name);
+        }
+
+        if (criteria === "year") {
+
+            if (sortAsc) {
+                return a.year - b.year;
+            }
+
+            return b.year - a.year;
+        }
+
+        if (sortAsc) {
+            return a.rating - b.rating;
+        }
+
+        return b.rating - a.rating;
+    });
 
     afficherSeries(result);
 }
 
 btnSort.addEventListener("click", function () {
     sortAsc = !sortAsc;
-    btnSort.textContent = sortAsc ? "Trier par note ↑ (ASC)" : "Trier par note ↓ (DESC)";
+    btnSort.textContent = sortAsc ? "Trier ↑ (ASC)" : "Trier ↓ (DESC)";
     refresh();
 });
 
 searchInput.addEventListener("input", refresh);
+sortCriteria.addEventListener("change", refresh);
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -195,9 +221,13 @@ function afficherSeries(tabSeries) {
                 <div class="card-body">
                     <h2>${escapeHtml(serie.name)}</h2>
                     
-                    <p class="card-meta">
-                        ${escapeHtml(serie.category)} ${serie.year} ${escapeHtml(serie.platform)}
-                    </p>
+              <p class="card-meta">
+                ${escapeHtml(serie.category)}
+                -
+                ${serie.year}
+                -
+                ${escapeHtml(serie.platform)}
+              </p>
                     
                     <div class="card-footer">
                         <span class="rating">★ ${serie.rating}/10</span>

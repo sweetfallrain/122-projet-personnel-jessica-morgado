@@ -44,6 +44,30 @@ body {
     margin: 0 auto;
     padding: 3rem 0;
 }
+/* NAV */
+.hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: var(--pink);
+}
 
 /* HEADER */
 
@@ -157,7 +181,7 @@ select:focus {
 
 .toolbar {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 160px auto;
     gap: 1rem;
     margin-bottom: 1.7rem;
 }

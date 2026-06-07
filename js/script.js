@@ -145,13 +145,13 @@ function refresh() {
             return b.name.localeCompare(a.name);
         }
 
-        if (criteria === "year") {
+        if (criteria === "platform") {
 
             if (sortAsc) {
-                return a.year - b.year;
+                return a.platform.localeCompare(b.platform);
             }
 
-            return b.year - a.year;
+            return b.platform.localeCompare(a.platform);
         }
 
         if (sortAsc) {

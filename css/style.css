@@ -4,247 +4,298 @@
 
 /* 1. PALETTE & VARIABLES */
 :root {
-    /* --- La palette --- */
-    --coffee:  #554345;
-    --orchid:  #d463a1;
-    --sugar:   #eec7a0;
-    --seafoam: #7fb9b9;
-    --sky:     #6caede;
+    --bg: #100f18;
+    --bg-soft: #171624;
+    --surface: rgba(24, 23, 36, 0.88);
+    --surface-light: #201f2f;
+    --border: rgba(255, 255, 255, 0.12);
 
-    /* --- Les rôles (réutilisent la palette ci-dessus) --- */
-    --bg: #fbf5ee;              /* fond de page : Sugar Cookie très pâle */
-    --surface: #ffffff;        /* fond des cartes et du formulaire */
-    --text: var(--coffee);     /* texte principal */
-    --text-muted: #6f5c5d;     /* texte secondaire (Coffee éclairci) */
-    --border: #ece1d4;         /* bordures (ton crème) */
+    --text: #f7f1f5;
+    --text-muted: #aaa3b3;
 
-    --button: var(--coffee);   /* fond des boutons */
-    --button-hover: #463639;   /* survol des boutons (Coffee assombri) */
-    --focus: var(--sky);       /* bordure des champs au focus */
+    --pink: #d463a1;
+    --peach: #eec7a0;
+    --purple: #8c5aa8;
 
-    --danger: var(--orchid);   /* suppression */
-    --danger-soft: #fbe7f2;    /* fond de l'icône poubelle au survol */
+    --danger: #f07aa5;
 
-    --radius: 14px;
-    --shadow-sm: 0 1px 2px rgba(85, 67, 69, 0.10);
-    --shadow-md: 0 12px 28px -10px rgba(85, 67, 69, 0.28);
+    --radius: 16px;
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
 
-/* 2. BASE */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    background:
+            radial-gradient(circle at top left, rgba(212, 99, 161, 0.25), transparent 35%),
+            radial-gradient(circle at top right, rgba(238, 199, 160, 0.16), transparent 30%),
+            var(--bg);
     color: var(--text);
-    background-color: var(--bg);
-    max-width: 1100px;
+    min-height: 100vh;
+}
+
+.page {
+    width: min(1180px, 92%);
     margin: 0 auto;
-    padding: 2rem;
-    line-height: 1.5;
+    padding: 3rem 0;
 }
 
-header {
-    margin-bottom: 2rem;
+/* HEADER */
+
+.hero {
+    margin-bottom: 2.5rem;
 }
 
-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    background: linear-gradient(135deg, var(--pink), var(--peach));
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-/* EN-TÊTE / BANNIÈRE (dégradé coucher de soleil Orchid → Sugar Cookie) */
-header {
-    margin-bottom: 2rem;
-}
-
-.banner {
-    background: linear-gradient(135deg, var(--orchid), var(--sugar));
-    border-radius: var(--radius);
-    padding: 2.4rem 2rem;
-}
-
-.banner h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    text-transform: uppercase;     /* affiche "Binge" en BINGE */
-    letter-spacing: 0.12em;
-    color: var(--coffee);
-}
-
-.tagline {
-    margin-top: 0.4rem;
+.hero p {
+    margin-top: 1rem;
+    color: var(--text-muted);
     font-size: 1.05rem;
-    font-weight: 500;
-    color: rgba(85, 67, 69, 0.78);  /* Coffee légèrement adouci */
 }
 
-/* 3. BOUTONS (Ajouter, Trier...) */
-.btn {
-    padding: 10px 18px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: white;
-    background-color: var(--button);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background-color 0.15s ease;
-}
-.btn:hover {
-    background-color: var(--button-hover);
-}
+/* FORMULAIRE */
 
-/* 4. FORMULAIRE D'AJOUT (présenté comme une carte) */
-#form-add {
-    background-color: var(--surface);
+.panel {
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 1.5rem;
-    margin: 0 0 2rem;
+    box-shadow: var(--shadow);
+    padding: 1.6rem;
+    margin-bottom: 1.7rem;
+    backdrop-filter: blur(16px);
 }
 
-#form-add h2 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+.panel h2 {
+    color: var(--pink);
+    font-size: 1.2rem;
+    margin-bottom: 1.3rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 1.2rem;
+    align-items: end;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    margin-bottom: 14px;
+    gap: 0.45rem;
 }
 
 .form-group label {
-    font-size: 0.85rem;
-    font-weight: 500;
     color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
-.form-group input,
-.form-group select {
-    padding: 10px;
+input,
+select {
+    width: 100%;
+    height: 46px;
+    padding: 0 1rem;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: rgba(13, 13, 22, 0.75);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    background-color: var(--surface);
+    border-radius: 10px;
 }
 
-.form-group input:focus,
-.form-group select:focus {
+input::placeholder {
+    color: #777080;
+}
+
+input:focus,
+select:focus {
     outline: none;
-    border-color: var(--focus);
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(212, 99, 161, 0.16);
 }
 
-/* 5. BARRE D'OUTILS (recherche + tri) */
+/* BOUTONS */
+
+.btn {
+    height: 46px;
+    padding: 0 1.3rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 700;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    cursor: pointer;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+.btn-add {
+    justify-self: end;
+    min-width: 145px;
+}
+
+/* RECHERCHE */
+
 .toolbar {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 1rem;
-    align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.7rem;
 }
 
 #search {
-    flex: 1;
-    max-width: 400px;
-    padding: 10px 14px;
-    font-family: inherit;
-    font-size: 1rem;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background-color: var(--surface);
-}
-#search:focus {
-    outline: none;
-    border-color: var(--focus);
+    background: rgba(24, 23, 36, 0.88);
 }
 
-/* 6. LISTE DES SÉRIES (grille de cartes) */
+/* CARTES */
+
 #list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
     list-style: none;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 1.4rem;
 }
 
 .card {
-    position: relative;     /* sert de repère pour placer l'icône poubelle */
-    background-color: var(--surface);
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    min-height: 365px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
+
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    border-color: rgba(212, 99, 161, 0.45);
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 230px;
     object-fit: cover;
     object-position: center;
+    display: block;
+    background: #111;
 }
 
 .card-body {
-    padding: 1rem 1.1rem 1.2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .card-body h2 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 4px;
+    font-size: 1rem;
+    margin-bottom: 0.45rem;
 }
 
 .card-meta {
-    font-size: 0.88rem;
     color: var(--text-muted);
-    text-transform: capitalize;   /* affiche "action" comme "Action" */
-    margin-bottom: 10px;
+    font-size: 0.78rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
 }
 
-/* La note, présentée comme un petit badge (couleur Seafoam) */
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .rating {
     display: inline-block;
-    padding: 4px 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #347373;                            /* Seafoam foncé, pour le contraste */
-    background-color: rgba(127, 185, 185, 0.25); /* Seafoam très clair */
-    border-radius: 999px;
+    padding: 0.35rem 0.65rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: white;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
 }
 
-/* 7. BOUTON DE SUPPRESSION (icône poubelle, en haut à droite de la carte) */
 .btn-delete {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    display: grid;
-    place-items: center;
     width: 34px;
     height: 34px;
-    padding: 0;
+    display: grid;
+    place-items: center;
     border: none;
-    border-radius: 9px;
-    color:  #347373;
-    background-color: rgba(127, 185, 185, 0.25);
-    box-shadow: var(--shadow-sm);
+    border-radius: 8px;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.08);
     cursor: pointer;
-    transition: color 0.15s ease, background-color 0.15s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 .btn-delete:hover {
-    color: var(--danger);              /* l'icône devient Orchid au survol */
-    background-color: var(--danger-soft);
+    color: white;
+    background: var(--danger);
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn-add {
+        justify-self: stretch;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        width: 92%;
+        padding: 2rem 0;
+    }
+
+    .form-grid,
+    .toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .card img {
+        height: 250px;
+    }
 }

@@ -33,7 +33,7 @@ img/img_02.png
 ## Transparence IA
 
 ### Outils utilisés
-[Quels outils d'IA as-tu utilisés ? (Copilot, ChatGPT, Claude, etc.)]
+Claude & ChatGPT 
 
 ### Prompts utilisés
 [Copie ici les prompts importants que tu as donnés à l'IA]
@@ -80,12 +80,16 @@ https://mon-pseudo.github.io/esig-122-jeux-video/
 - ChatGPT pour comprendre `Array.sort()` avec `localeCompare()`
 
 ### Prompts utilisés
-- "Génère un tableau de 10 jeux vidéo avec id, name, category, platform, rating, year, image"
-- "Explique-moi comment trier un tableau d'objets par une propriété texte en JavaScript"
+- "Génère un tableau de 10 séries avec id, name, category, platform, rating, year, image"
+- "Améliore le visuel de mon site mais explique moi point par point ce que tu modifies !"
+- "Aide moi à comprendre mes erreurs"
 
 ### Ce que j'ai appris vs ce que l'IA a généré
-- **Généré par l'IA** : le tableau de données initial (10 objets)
-- **Écrit par moi** : toute la logique d'affichage, tri, recherche, ajout et suppression
-- **Appris grâce à l'IA** : j'ai compris comment `localeCompare()` gère les accents en français
+- **Généré par l'IA** : le tableau de données initial (10 objets), l'harmonie du visuel au niveau aesthétique et aussi la structure.
+- **Écrit par moi** : toute l'intégration du projet, les modifications, corrections et commentaires du code, la personnalisation du design,
+l' ajout de fonctionnalités (tri, recherche, etc.) et la compréhension de leur fonctionnement.
+- **Appris grâce à l'IA** : Comment la fonction escapeHtml() permet de sécuriser les données affichées dans les cartes. 
+En transformant certains caractères spéciaux afin d'éviter qu'un utilisateur puisse injecter du code HTML ou JavaScript dans 
+la page.
 
 </details>

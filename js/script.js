@@ -94,20 +94,90 @@ const data = [
   }
 ];
 
+// Éléments du DOM
+const btnSort = document.getElementById("btn-sort");
+const searchInput = document.getElementById("search");
+const form = document.getElementById("form-add");
+const inputName = document.getElementById("input-name");
+const inputCategory = document.getElementById("input-category");
+const inputRating = document.getElementById("input-rating");
+
+// Sens du tri : false = DESC (notes élevées en premier)
+let sortAsc = false;
+
+/**
+ * Rafraîchit l'affichage en combinant filtre + tri
+ */
+function refresh() {
+    const query = searchInput.value.toLowerCase();
+
+    // 1. Filtrer selon le champ de recherche
+    let result = data.filter(serie =>
+        serie.name.toLowerCase().includes(query)
+    );
+
+    // 2. Trier selon l'état du bouton
+    result = [...result].sort((a, b) =>
+        sortAsc ? a.rating - b.rating : b.rating - a.rating
+    );
+
+    // 3. Afficher
+    afficherSeries(result);
+}
+
+// Tri : inverser l'état, mettre à jour le bouton, rafraîchir
+btnSort.addEventListener("click", function () {
+    sortAsc = !sortAsc;
+    btnSort.textContent = sortAsc ? "Trier par note ↑ (ASC)" : "Trier par note ↓ (DESC)";
+    refresh();
+});
+
+// Recherche : à chaque frappe, rafraîchir
+searchInput.addEventListener("input", refresh);
+
+// Formulaire : ajouter une série
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nouvelleSerie = {
+        id: Date.now(),
+        name: inputName.value.trim(),
+        category: inputCategory.value,
+        rating: Number(inputRating.value),
+        year: new Date().getFullYear(),
+        platform: "Netflix",
+        image: "https://placehold.co/400x300/7f8c8d/white?text=" + encodeURIComponent(inputName.value.trim())
+    };
+
+    data.push(nouvelleSerie);
+    refresh();
+    form.reset();
+});
+
+// Suppression : délégation sur le conteneur #list
+document.getElementById("list").addEventListener("click", function (event) {
+    const btn = event.target.closest(".btn-delete");
+    if (!btn) return;
+
+    const card = btn.closest(".card");
+    const id = Number(card.dataset.id);
+
+    if (!confirm("Supprimer cette série ?")) return;
+
+    data = data.filter(serie=> serie.id !== id);
+    refresh();
+});
+
 /**
  * Affiche les séries dans la page
  * @param {Array} tabSeries - Tableau d'objets à afficher
  */
 function afficherSeries(tabSeries) {
-    // Récupère la liste #list
     const ulList = document.getElementById("list");
-    // Variable temporaire pour construire la liste
     let html = "";
 
-//Vide, réinitialise la liste
     ulList.innerHTML = "";
 
-//Parcours la liste et crée un li par série
     tabSeries.forEach(serie => {
        html += `
         <article class="card" data-id="${serie.id}">
@@ -121,12 +191,7 @@ function afficherSeries(tabSeries) {
     `;
     });
 
-// Ajoute la liste complète dans le DOM
     ulList.innerHTML = html;
 }
 
-// Appel au chargement de la page
-    afficherSeries(data);
-
-
-
+refresh();

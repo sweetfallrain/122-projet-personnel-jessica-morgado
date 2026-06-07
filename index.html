@@ -12,7 +12,38 @@
   </header>
 
   <main>
-    <ul id="list"></ul>
+      <form id="form-add">
+          <h2>Ajouter</h2>
+
+          <div class="form-group">
+              <label for="input-name">Nom</label>
+              <input type="text" id="input-name" placeholder="Ex : The Mentalist" required>
+          </div>
+
+          <div class="form-group">
+              <label for="input-category">Catégorie</label>
+              <select id="input-category">
+                  <option value="Action">Action</option>
+                  <option value="Thriller">Thriller</option>
+                  <option value="Science-fiction">Science-fiction</option>
+                  <option value="Comedy">Comedy</option>
+                  <option value="Drama">Drama</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label for="input-rating">Note (1–10)</label>
+              <input type="number" id="input-rating" min="1" max="10" placeholder="8">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
+
+      <div class="toolbar">
+          <input type="text" id="search" placeholder="Rechercher une série...">
+          <button id="btn-sort" class="btn btn-primary">Trier par note ↓ (DESC)</button>
+      </div>
+      <ul id="list"></ul>
   </main>
 
   <script src="js/script.js"></script>

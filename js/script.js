@@ -1,7 +1,9 @@
 "use strict";
 
+// Image utilisée par défaut si une série ajoutée n'a pas d'image personnalisée
 const DEFAULT_IMAGE = "https://placehold.co/400x300/171624/f7f1f5?text=Pas+d%27image";
 
+// Fonction de sécurité : évite qu'un texte ajouté par l'utilisateur soit interprété comme du HTML
 function escapeHtml(str) {
     return String(str)
         .replace(/&/g, "&amp;")
@@ -11,6 +13,7 @@ function escapeHtml(str) {
         .replace(/'/g, "&#039;");
 }
 
+// Icône de suppression utilisée dans chaque carte
 const TRASH_ICON = `
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
        fill="none" stroke="currentColor" stroke-width="2"
@@ -21,6 +24,7 @@ const TRASH_ICON = `
     <line x1="14" y1="11" x2="14" y2="17"></line>
   </svg>`;
 
+// Données initiales : séries avec leurs caractéristiques
 let data = [
     {
         id: 1,
@@ -114,6 +118,7 @@ let data = [
     }
 ];
 
+// Récupération des éléments HTML nécessaires
 const btnSort = document.getElementById("btn-sort");
 const searchInput = document.getElementById("search");
 const form = document.getElementById("form-add");
@@ -124,16 +129,20 @@ const inputYear = document.getElementById("input-year");
 const inputRating = document.getElementById("input-rating");
 const sortCriteria = document.getElementById("sort-criteria");
 
+// Variable qui indique le sens du tri : false = descendant, true = ascendant
 let sortAsc = false;
 
+// Fonction principale : elle filtre, trie puis affiche les séries
 function refresh() {
     const query = searchInput.value.toLowerCase();
     const criteria = sortCriteria.value;
 
+    // Filtre les séries selon le texte recherché
     let result = data.filter(serie =>
         serie.name.toLowerCase().includes(query)
     );
 
+    // Trie les séries selon le critère choisi : nom, plateforme ou note
     result = [...result].sort((a, b) => {
 
         if (criteria === "name") {
@@ -164,15 +173,20 @@ function refresh() {
     afficherSeries(result);
 }
 
+// Change le sens du tri au clic sur le bouton
 btnSort.addEventListener("click", function () {
     sortAsc = !sortAsc;
     btnSort.textContent = sortAsc ? "Trier ↑ (ASC)" : "Trier ↓ (DESC)";
     refresh();
 });
 
+// Met à jour l'affichage pendant la recherche
 searchInput.addEventListener("input", refresh);
+
+// Met à jour l'affichage quand le critère de tri change
 sortCriteria.addEventListener("change", refresh);
 
+// Ajoute une nouvelle série depuis le formulaire
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -194,6 +208,7 @@ form.addEventListener("submit", function (event) {
     form.reset();
 });
 
+// Supprime une série lorsqu'on clique sur son bouton de suppression
 document.getElementById("list").addEventListener("click", function (event) {
     const btn = event.target.closest(".btn-delete");
     if (!btn) return;
@@ -207,6 +222,7 @@ document.getElementById("list").addEventListener("click", function (event) {
     refresh();
 });
 
+// Génère les cartes HTML à partir du tableau de séries reçu
 function afficherSeries(tabSeries) {
     const ulList = document.getElementById("list");
     let html = "";
@@ -245,5 +261,5 @@ function afficherSeries(tabSeries) {
 
     ulList.innerHTML = html;
 }
-
+// Premier affichage des séries au chargement de la page
 refresh();

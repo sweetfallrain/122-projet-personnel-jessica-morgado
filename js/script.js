@@ -1,5 +1,25 @@
 "use strict";
 
+const DEFAULT_IMAGE = "https://placehold.co/400x300/cccccc/333333?text=Pas+d%27image";
+
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+const TRASH_ICON = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+       fill="none" stroke="currentColor" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="3 6 5 6 21 6"></polyline>
+    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+    <line x1="10" y1="11" x2="10" y2="17"></line>
+    <line x1="14" y1="11" x2="14" y2="17"></line>
+  </svg>`;
+
 // Tableau de données — à générer avec Copilot / une IA
 let data = [
   {
@@ -139,13 +159,17 @@ searchInput.addEventListener("input", refresh);
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    const nom = inputName.value.trim();
+    if (nom === "") return;
+
     const nouvelleSerie = {
         id: Date.now(),
-        name: inputName.value.trim(),
+        name: nom,
         category: inputCategory.value,
-        rating: Number(inputRating.value),
+        rating: Number(inputRating.value) || 0,
         year: new Date().getFullYear(),
         platform: "Netflix",
+        image: `https://placehold.co/400x300/4a90d9/white?text=${encodeURIComponent(nom)}`
     };
 
     data.push(nouvelleSerie);
@@ -175,18 +199,26 @@ function afficherSeries(tabSeries) {
     const ulList = document.getElementById("list");
     let html = "";
 
-    ulList.innerHTML = "";
-
     tabSeries.forEach(serie => {
-       html += `
-        <article class="card" data-id="${serie.id}">
-            <img src="${serie.image}" alt="${serie.name}">
+        const image = serie.image || DEFAULT_IMAGE;
+        html += `
+        <li class="card" data-id="${serie.id}">
+            <img src="${image}" alt="${escapeHtml(serie.name)}">
             <div class="card-body">
-                <h2>${serie.name}</h2>
-                <p>${serie.category} - ${serie.year}</p>
-                <span class="rating">${serie.rating}</span>
+                <h2>${escapeHtml(serie.name)}</h2>
+                <p class="card-meta">
+                    ${escapeHtml(serie.category)} · ${serie.year} · ${escapeHtml(serie.platform)}
+                </p>
+                <div class="card-footer">
+                    <span class="rating">★ ${serie.rating}/10</span>
+                    <button class="btn-delete" type="button"
+                            title="Supprimer ${escapeHtml(serie.name)}" aria-label="Supprimer">
+                        ${TRASH_ICON}
+                    </button>
+                </div>
             </div>
-        </article>
+        </li>
+
     `;
     });
 

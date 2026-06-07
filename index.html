@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Binge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binge</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,67 +34,67 @@
 
     </header>
 
-<main>
-      <form id="form-add" class="panel">
-          <h2>Ajouter une série</h2>
+    <main>
+        <form id="form-add" class="panel">
+            <h2>Ajouter une série</h2>
 
-          <div class="form-grid">
+            <div class="form-grid">
                 <div class="form-group">
                     <label for="input-name">Nom</label>
                     <input type="text" id="input-name" placeholder="Ex : The Mentalist" required>
-                 </div>
+                </div>
 
-          <div class="form-group">
-              <label for="input-category">Catégorie</label>
-              <select id="input-category">
-                  <option value="Action">Action</option>
-                  <option value="Thriller">Thriller</option>
-                  <option value="Science-fiction">Science-fiction</option>
-                  <option value="Comedy">Comedy</option>
-                  <option value="Drama">Drama</option>
-              </select>
-          </div>
+                <div class="form-group">
+                    <label for="input-category">Catégorie</label>
+                    <select id="input-category">
+                        <option value="Action">Action</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Science-fiction">Science-fiction</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                    </select>
+                </div>
 
-          <div class="form-group">
-              <label for="input-platform">Plateforme</label>
-              <select id="input-platform">
-                  <option value="Netflix">Netflix</option>
-                  <option value="Prime Video">Prime Video</option>
-                  <option value="Disney+">Disney+</option>
-                  <option value="HBO Max">HBO Max</option>
-                  <option value="Apple TV+">Apple TV+</option>
-                  <option value="BBC iPlayer">BBC iPlayer</option>
-              </select>
-          </div>
+                <div class="form-group">
+                    <label for="input-platform">Plateforme</label>
+                    <select id="input-platform">
+                        <option value="Netflix">Netflix</option>
+                        <option value="Prime Video">Prime Video</option>
+                        <option value="Disney+">Disney+</option>
+                        <option value="HBO Max">HBO Max</option>
+                        <option value="Apple TV+">Apple TV+</option>
+                        <option value="BBC iPlayer">BBC iPlayer</option>
+                    </select>
+                </div>
 
-          <div class="form-group">
-              <label for="input-year">Année</label>
-              <input type="number" id="input-year" min="1950" max="2030" placeholder="2024">
-          </div>
+                <div class="form-group">
+                    <label for="input-year">Année</label>
+                    <input type="number" id="input-year" min="1950" max="2030" placeholder="2024">
+                </div>
 
-          <div class="form-group">
-              <label for="input-rating">Note (1–10)</label>
-              <input type="number" id="input-rating" min="1" max="10" placeholder="8">
-          </div>
+                <div class="form-group">
+                    <label for="input-rating">Note (1–10)</label>
+                    <input type="number" id="input-rating" min="1" max="10" placeholder="8">
+                </div>
 
-            <button type="submit" class="btn btn-primary">Ajouter</button>
-          </div>
-      </form>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+            </div>
+        </form>
 
-    <div class="toolbar">
-        <input type="text" id="search" placeholder="Rechercher une série..." aria-label="Rechercher une série">
+        <div class="toolbar">
+            <input type="text" id="search" placeholder="Rechercher une série..." aria-label="Rechercher une série">
 
-        <select id="sort-criteria" aria-label="Critère de tri">
-            <option value="rating">Note</option>
-            <option value="platform">Plateforme</option>
-            <option value="name">Nom</option>
-        </select>
+            <select id="sort-criteria" aria-label="Critère de tri">
+                <option value="rating">Note</option>
+                <option value="platform">Plateforme</option>
+                <option value="name">Nom</option>
+            </select>
 
-        <button id="btn-sort" class="btn">Trier </button>
-    </div>
+            <button id="btn-sort" class="btn">Trier </button>
+        </div>
 
-    <ul id="list"></ul>
-</main>
+        <ul id="list"></ul>
+    </main>
 
     <footer>
         <p>© 2026 Binge — Mon gestionnaire de séries — Jessica M.</p>

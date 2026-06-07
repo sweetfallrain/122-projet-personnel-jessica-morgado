@@ -1,7 +1,7 @@
 "use strict";
 
 // Tableau de données — à générer avec Copilot / une IA
-const data = [
+let data = [
   {
     id: 1,
     name: "The Mentalist",
@@ -146,7 +146,6 @@ form.addEventListener("submit", function (event) {
         rating: Number(inputRating.value),
         year: new Date().getFullYear(),
         platform: "Netflix",
-        image: "https://placehold.co/400x300/7f8c8d/white?text=" + encodeURIComponent(inputName.value.trim())
     };
 
     data.push(nouvelleSerie);

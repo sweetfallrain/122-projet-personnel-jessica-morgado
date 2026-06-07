@@ -1,6 +1,8 @@
 # Mon projet 122
 
 Projet JavaScript — Cours 122 (ESIG)
+Binge - Gestionnaire de séries télévisées
+Jessica Morgado 
 
 ## Description
 
@@ -27,8 +29,8 @@ https://sweetfallrain.github.io/122-projet-personnel-jessica-morgado/
 
 ## Captures d'écran
 
-img/img_01.png
-img/img_02.png
+![Aperçu desktop](img/img_01.png)
+![Aperçu desktop](img/img_02.png)
 
 ## Transparence IA
 
@@ -36,10 +38,17 @@ img/img_02.png
 Claude & ChatGPT 
 
 ### Prompts utilisés
-[Copie ici les prompts importants que tu as donnés à l'IA]
+- Génère un tableau de données contenant 10 séries en indiquant un id, un nom, une catégorie, une plateforme, une note, une année de sortie et une image
+- Améliore le visuel de mon site mais explique moi point par point ce que tu modifies !
+- Aide moi à corriger mes erreurs de code et explique moi ce que je fais mal. 
 
 ### Ce que j'ai appris vs ce que l'IA a généré
-[Explique ce que tu as écrit toi-même et ce que l'IA a produit. Qu'as-tu appris en utilisant l'IA ?]
+L'IA m'a aidé à comprendre certaines notions JavaScript, à améliorer le design du projet et à générer certaines données d'exemple.
+
+J'ai cependant réalisé moi-même l'intégration du projet, les modifications du code, la personnalisation du design, l'ajout des fonctionnalités et la compréhension de leur fonctionnement.
+
+L'IA m'a notamment appris des éléments plus spécifiques comme l'utilisation de la fonction escapeHtml() qui permet de sécuriser les données affichées dans les cartes. 
+Elle transforme certains caractères spéciaux afin d'éviter qu'un utilisateur puisse injecter du code HTML ou JavaScript dans la page.
 
 ---
 
@@ -82,14 +91,11 @@ https://mon-pseudo.github.io/esig-122-jeux-video/
 ### Prompts utilisés
 - "Génère un tableau de 10 séries avec id, name, category, platform, rating, year, image"
 - "Améliore le visuel de mon site mais explique moi point par point ce que tu modifies !"
-- "Aide moi à comprendre mes erreurs"
+
 
 ### Ce que j'ai appris vs ce que l'IA a généré
-- **Généré par l'IA** : le tableau de données initial (10 objets), l'harmonie du visuel au niveau aesthétique et aussi la structure.
-- **Écrit par moi** : toute l'intégration du projet, les modifications, corrections et commentaires du code, la personnalisation du design,
-l' ajout de fonctionnalités (tri, recherche, etc.) et la compréhension de leur fonctionnement.
-- **Appris grâce à l'IA** : Comment la fonction escapeHtml() permet de sécuriser les données affichées dans les cartes. 
-En transformant certains caractères spéciaux afin d'éviter qu'un utilisateur puisse injecter du code HTML ou JavaScript dans 
-la page.
+- **Généré par l'IA** : le tableau de données initial (10 objets)
+- **Écrit par moi** : toute la logique d'affichage, tri, recherche, ajout et suppression
+- **Appris grâce à l'IA** : j'ai compris comment `localeCompare()` gère les accents en français
 
 </details>

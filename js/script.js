@@ -3,7 +3,7 @@
 // Image utilisée par défaut si une série ajoutée n'a pas d'image personnalisée
 const DEFAULT_IMAGE = "https://placehold.co/400x300/171624/f7f1f5?text=Pas+d%27image";
 
-// Fonction de sécurité : évite qu'un texte ajouté par l'utilisateur soit interprété comme du HTML
+// Fonction de sécurité : évite qu'un texte ajouté soit interprété comme du HTML
 function escapeHtml(str) {
     return String(str)
         .replace(/&/g, "&amp;")

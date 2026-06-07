@@ -83,7 +83,7 @@ let data = [
         platform: "Netflix",
         rating: 9,
         year: 2004,
-        image: "img/friends.jpg"
+        image: "img/serie-friends.jpg"
     },
     {
         id: 8,
@@ -92,7 +92,7 @@ let data = [
         platform: "Prime Video",
         rating: 10,
         year: 2005,
-        image: "img/supernatural.jpg"
+        image: "img/serie-supernatural.jpg"
     },
     {
         id: 9,
@@ -110,7 +110,7 @@ let data = [
         platform: "BBC iPlayer",
         rating: 9,
         year: 2010,
-        image: "img/sherlock.jpg"
+        image: "img/serie-sherlock.jpg"
     }
 ];
 

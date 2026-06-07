@@ -83,7 +83,7 @@ let data = [
         platform: "Netflix",
         rating: 9,
         year: 2004,
-        image: "img/friends.jpg"
+        image: "img/Friends.jpg"
     },
     {
         id: 8,
@@ -92,7 +92,7 @@ let data = [
         platform: "Prime Video",
         rating: 10,
         year: 2005,
-        image: "img/supernatural.jpg"
+        image: "img/Supernatural.jpg"
     },
     {
         id: 9,

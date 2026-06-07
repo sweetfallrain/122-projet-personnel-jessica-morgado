@@ -57,6 +57,32 @@ header h1 {
     letter-spacing: -0.02em;
 }
 
+/* EN-TÊTE / BANNIÈRE (dégradé coucher de soleil Orchid → Sugar Cookie) */
+header {
+    margin-bottom: 2rem;
+}
+
+.banner {
+    background: linear-gradient(135deg, var(--orchid), var(--sugar));
+    border-radius: var(--radius);
+    padding: 2.4rem 2rem;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;     /* affiche "Binge" en BINGE */
+    letter-spacing: 0.12em;
+    color: var(--coffee);
+}
+
+.tagline {
+    margin-top: 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(85, 67, 69, 0.78);  /* Coffee légèrement adouci */
+}
+
 /* 3. BOUTONS (Ajouter, Trier...) */
 .btn {
     padding: 10px 18px;

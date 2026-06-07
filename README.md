@@ -14,20 +14,21 @@ le codage en JavaScript ainsi que l'affichage dynamique de données.
 
 ## Lien GitHub Pages
 
-[Colle ici le lien de ton site en ligne]
+https://sweetfallrain.github.io/122-projet-personnel-jessica-morgado/
 
 ## Fonctionnalités
 
-- [ ] Affichage dynamique de la liste
-- [ ] Tri par plusieurs critères
-- [ ] Recherche en temps réel
-- [ ] Ajout via formulaire
-- [ ] Suppression d'éléments
-- [ ] Responsive (mobile + desktop)
+- [x] Affichage dynamique de la liste
+- [x] Tri par plusieurs critères
+- [x] Recherche en temps réel
+- [x] Ajout via formulaire
+- [x] Suppression d'éléments
+- [x] Responsive (mobile + desktop)
 
 ## Captures d'écran
 
-[Ajoute des captures de ton projet ici]
+img/img_01.png
+img/img_02.png
 
 ## Transparence IA
 

@@ -29,70 +29,70 @@ let data = [
     platform: "Netflix",
     rating: 10,
     year: 2008,
-    image: "https://placehold.co/400x300/4a90d9/white?text=The+Mentalist"
+    image: "img/TheMentalist.png",
   },
   {
     id: 2,
-    name: "Breaking Bad",
-    category: "drama",
+    name: "The Vampire Diaries",
+    category: "science-fiction",
     platform: "Netflix",
     rating: 10,
-    year: 2008,
-    image: "https://placehold.co/400x300/e74c3c/white?text=Breaking+Bad"
+    year: 2009,
+    image: "https://placehold.co/400x300/e74c3c/white?text=The+Vampire+Diaries"
   },
   {
     id: 3,
-    name: "The Office",
+    name: "The Boys",
     category: "comedy",
-    platform: "Netflix",
-    rating: 9,
-    year: 2005,
-    image: "https://placehold.co/400x300/f39c12/white?text=The+Office"
+    platform: "Prime Video",
+    rating: 8,
+    year: 2019,
+    image: "https://placehold.co/400x300/f39c12/white?text=The+Boys"
   },
   {
     id: 4,
-    name: "Mindhunter",
-    category: "thriller",
+    name: "One Tree Hill",
+    category: "drama",
     platform: "Netflix",
     rating: 9,
-    year: 2017,
-    image: "https://placehold.co/400x300/9b59b6/white?text=Mindhunter"
+    year: 2003,
+    image: "https://placehold.co/400x300/9b59b6/white?text=One+Tree+Hill"
   },
   {
     id: 5,
     name: "Stranger Things",
     category: "science-fiction",
     platform: "Netflix",
-    rating: 9,
+    rating: 6,
     year: 2016,
     image: "https://placehold.co/400x300/1abc9c/white?text=Stranger+Things"
   },
   {
     id: 6,
-    name: "The Crown",
-    category: "drama",
-    platform: "Netflix",
-    rating: 8,
-    year: 2016,
-    image: "https://placehold.co/400x300/e74c3c/white?text=The+Crown"
-  },
-  {
-    id: 7,
-    name: "Brooklyn Nine-Nine",
-    category: "comedy",
+    name: "Peaky Blinders",
+    category: "action",
     platform: "Netflix",
     rating: 9,
     year: 2013,
-    image: "https://placehold.co/400x300/f39c12/white?text=Brooklyn+Nine-Nine"
+    image: "https://placehold.co/400x300/e74c3c/white?text=Peaky+Blinders"
+  },
+  {
+    id: 7,
+    name: "Friends",
+    category: "comedy",
+    platform: "Netflix",
+    rating: 9,
+    year: 2004,
+    image: "https://placehold.co/400x300/f39c12/white?text=Friends"
   },
   {
     id: 8,
-    name: "Dark",
+    name: "Supernatural",
     category: "science-fiction",
-    platform: "Netflix",
-    rating: 9,
-    year: 2017,
-    image: "https://placehold.co/400x300/1abc9c/white?text=Dark"
+    platform: "Prime Video",
+    rating: 10,
+    year: 2005,
+    image: "https://placehold.co/400x300/1abc9c/white?text=Supernatural"
   },
   {
     id: 9,

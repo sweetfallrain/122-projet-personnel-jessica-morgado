@@ -193,9 +193,9 @@ header {
 
 .card img {
     width: 100%;
-    height: 190px;
+    height: 180px;
     object-fit: cover;
-    display: block;
+    object-position: center;
 }
 
 .card-body {

@@ -29,7 +29,7 @@ let data = [
     platform: "Netflix",
     rating: 10,
     year: 2008,
-    image: "img/TheMentalist.png",
+    image: "img/the-mentalist.jpg",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ let data = [
     platform: "Netflix",
     rating: 10,
     year: 2009,
-    image: "img/TheVampireDiaries.png",
+    image: "img/the-vampire-diaries.jpg",
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ let data = [
     platform: "Prime Video",
     rating: 8,
     year: 2019,
-    image: "img/TheBoys.png",
+    image: "img/the-boys.jpg",
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ let data = [
     platform: "Netflix",
     rating: 9,
     year: 2003,
-    image: "img/OneTreeHill.png",
+    image: "img/one-tree-hill.jpg",
   },
   {
     id: 5,
@@ -65,7 +65,7 @@ let data = [
     platform: "Netflix",
     rating: 6,
     year: 2016,
-    image: "img/TheStrangerThings.png",
+    image: "img/stranger-things.jpg",
   },
   {
     id: 6,
@@ -74,7 +74,7 @@ let data = [
     platform: "Netflix",
     rating: 9,
     year: 2013,
-    image: "img/ThePeakyBlinders.png",
+    image: "img/peaky-blinders.jpg",
   },
   {
     id: 7,
@@ -83,7 +83,7 @@ let data = [
     platform: "Netflix",
     rating: 9,
     year: 2004,
-    image: "img/Friends.png",
+    image: "img/friends.jpg",
   },
   {
     id: 8,
@@ -92,7 +92,7 @@ let data = [
     platform: "Prime Video",
     rating: 10,
     year: 2005,
-    image: "img/Supernatural.png",
+    image: "img/supernatural.jpg",
   },
   {
     id: 9,
@@ -101,7 +101,7 @@ let data = [
     platform: "Prime Video",
     rating: 8,
     year: 2006,
-    image: "img/Dexter.png",
+    image: "img/dexter.jpg",
   },
   {
     id: 10,
@@ -110,7 +110,7 @@ let data = [
     platform: "BBC iPlayer",
     rating: 9,
     year: 2010,
-    image: "img/Sherlock.png",
+    image: "img/sherlock.jpg",
   }
 ];
 
